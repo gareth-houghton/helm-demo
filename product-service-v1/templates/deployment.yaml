@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-{{ .Values.version }}
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    app: product
+    version: "{{ .Values.version }}"
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: product
+      version: "{{ .Values.version }}"
+  template:
+    metadata:
+      labels:
+        app: product
+        version: "{{ .Values.version }}"
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      containers:
+      - name: product
+        image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.deployment.containerPort }}
+        securityContext:
+          runAsUser: {{ .Values.deployment.runAsUser }}
