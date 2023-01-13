@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.svc.vs.name }}
+  namespace: {{ .Values.svc.namespace.name }}
+spec:
+  hosts:
+  - "api.rte.cluster"
+  gateways:
+  - product-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /products
+    route:
+    - destination:
+        host: {{ .Values.svc.service.name }}
+        port:
+          number: {{ .Values.svc.service.port }}

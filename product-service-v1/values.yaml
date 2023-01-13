@@ -2,25 +2,40 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-version: "1.0"
+svc:
+  version: "1.0"
+  namespace:
+    name: product-service
+  service:
+    name: product-svc
+    port: 7001
+  serviceAccount:
+    name: product-sa
+  deployment:
+    replicaCount: 1
+    containerPort: 5002
+    runAsUser: 10001
+    image:
+      repository: bpcontaineracr.azurecr.io/product-service
+      tag: "1.0"
+      pullPolicy: IfNotPresent
+  vs:
+    name: product-vs
 
-namespace:
-  name: product-service
 
-service:
-  name: product-svc
-  port: 7001
-
-serviceAccount:
-  name: product-sa
-
-deployment:
-  replicaCount: 1
-  containerPort: 5002
-  runAsUser: 10001
-  image:
-    repository: bpcontaineracr.azurecr.io/product-service
-    tag: "1.0"
-    pullPolicy: IfNotPresent
-
-
+db:
+  version: "1.0"
+  namespace:
+    name: product-db
+  service:
+    name: db
+    port: 8001
+  serviceAccount:
+    name: product-db-sa
+  deployment:
+    replicaCount: 1
+    containerPort: 27017
+    image:
+      repository: bpcontaineracr.azurecr.io/product-db
+      tag: "1.0"
+      pullPolicy: IfNotPresent

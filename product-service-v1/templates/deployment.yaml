@@ -1,29 +1,65 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-{{ .Values.version }}
-  namespace: {{ .Values.namespace.name }}
+  name: product-{{ .Values.svc.version }}
+  namespace: {{ .Values.svc.namespace.name }}
   labels:
-    app: product
-    version: "{{ .Values.version }}"
+    app: product-svc
+    version: "{{ .Values.svc.version }}"
 spec:
-  replicas: {{ .Values.deployment.replicaCount }}
+  replicas: {{ .Values.svc.deployment.replicaCount }}
   selector:
     matchLabels:
-      app: product
-      version: "{{ .Values.version }}"
+      app: product-svc
+      version: "{{ .Values.svc.version }}"
   template:
     metadata:
       labels:
-        app: product
-        version: "{{ .Values.version }}"
+        app: product-svc
+        version: "{{ .Values.svc.version }}"
     spec:
-      serviceAccountName: {{ .Values.serviceAccount.name }}
+      serviceAccountName: {{ .Values.svc.serviceAccount.name }}
       containers:
       - name: product
-        image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
-        imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+        image: "{{ .Values.svc.deployment.image.repository }}:{{ .Values.svc.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.svc.deployment.image.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.deployment.containerPort }}
+        - containerPort: {{ .Values.svc.deployment.containerPort }}
         securityContext:
-          runAsUser: {{ .Values.deployment.runAsUser }}
+          runAsUser: {{ .Values.svc.deployment.runAsUser }}
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/appsettings.json
+          subPath: settings
+      volumes:
+      - name: config-volume
+        configMap:
+          name: product-svc-cm
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-db-{{ .Values.db.version }}
+  namespace: {{ .Values.db.namespace.name }}
+  labels:
+    app: product-db
+    version: "{{ .Values.db.version }}"
+spec:
+  replicas: {{ .Values.db.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: product-db
+      version: "{{ .Values.db.version }}"
+  template:
+    metadata:
+      labels:
+        app: product-db
+        version: "{{ .Values.db.version }}"
+    spec:
+      serviceAccountName: {{ .Values.db.serviceAccount.name }}
+      containers:
+      - name: product-db
+        image: "{{ .Values.db.deployment.image.repository }}:{{ .Values.db.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.db.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.db.deployment.containerPort }}
