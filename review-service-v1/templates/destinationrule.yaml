@@ -1,11 +1,11 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: product-ds
+  name: review-ds
 spec:
   host: api.rte.cluster
   subsets:
   - name: version1
     labels:
-      app: product-svc
+      app: review
       version: "1.0"

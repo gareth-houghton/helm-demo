@@ -11,7 +11,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /products
+        prefix: /reviews
     route:
     - destination:
         host: {{ .Values.svc.service.name }}

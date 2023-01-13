@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-{{ .Values.svc.version }}
+  namespace: {{ .Values.svc.namespace.name }}
+  labels:
+    app: review-svc
+    version: "{{ .Values.svc.version }}"
+spec:
+  replicas: {{ .Values.svc.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: review-svc
+      version: "{{ .Values.svc.version }}"
+  template:
+    metadata:
+      labels:
+        app: review-svc
+        version: "{{ .Values.svc.version }}"
+    spec:
+      serviceAccountName: {{ .Values.svc.serviceAccount.name }}
+      containers:
+      - name: review
+        image: "{{ .Values.svc.deployment.image.repository }}:{{ .Values.svc.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.svc.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.svc.deployment.containerPort }}
+        securityContext:
+          runAsUser: {{ .Values.svc.deployment.runAsUser }}
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/appsettings.json
+          subPath: settings
+      volumes:
+      - name: config-volume
+        configMap:
+          name: review-svc-cm
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-db-{{ .Values.db.version }}
+  namespace: {{ .Values.db.namespace.name }}
+  labels:
+    app: review-db
+    version: "{{ .Values.db.version }}"
+spec:
+  replicas: {{ .Values.db.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: review-db
+      version: "{{ .Values.db.version }}"
+  template:
+    metadata:
+      labels:
+        app: review-db
+        version: "{{ .Values.db.version }}"
+    spec:
+      serviceAccountName: {{ .Values.db.serviceAccount.name }}
+      containers:
+      - name: review-db
+        image: "{{ .Values.db.deployment.image.repository }}:{{ .Values.db.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.db.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.db.deployment.containerPort }}

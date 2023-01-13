@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.svc.service.name }}
   namespace: {{ .Values.svc.namespace.name }}
   labels:
-    app: product-svc
+    app: review-svc
 spec:
   ports:
     - name: http
@@ -12,7 +12,7 @@ spec:
       port: {{ .Values.svc.service.port }}
       targetPort: {{ .Values.svc.deployment.containerPort}}
   selector:
-    app: product-svc
+    app: review-svc
 ---
 apiVersion: v1
 kind: Service
@@ -20,7 +20,7 @@ metadata:
   name: {{ .Values.db.service.name }}
   namespace: {{ .Values.db.namespace.name }}
   labels:
-    app: product-db
+    app: review-db
 spec:
   ports:
     - name: tcp
@@ -28,4 +28,4 @@ spec:
       port: {{ .Values.db.service.port }}
       targetPort: {{ .Values.db.deployment.containerPort}}
   selector:
-    app: product-db
+    app: review-db

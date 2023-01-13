@@ -1,8 +1,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: product-gateway
-  namespace: {{ .Values.svc.namespace.name }}
+  name: store-gateway
+  namespace: istio-system
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -13,3 +13,4 @@ spec:
       protocol: HTTP
     hosts:
     - "api.rte.cluster"
+    - "rte.cluster"

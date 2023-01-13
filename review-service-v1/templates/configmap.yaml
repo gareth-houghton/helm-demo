@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: review-svc-cm
+  namespace: {{ .Values.svc.namespace.name }}
+data:
+  settings: |-
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*",
+      "MongoDB": {
+        "ConnectionURI": "mongodb://{{ .Values.db.service.name }}.{{ .Values.db.namespace.name }}.svc.cluster.local:{{ .Values.db.service.port }}",
+        "DatabaseName": "reviewdb",
+        "CollectionName": "reviews"
+      }
+    }
