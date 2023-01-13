@@ -18,7 +18,7 @@ svc:
     image:
       repository: bpcontaineracr.azurecr.io/product-service
       tag: "1.0"
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
   vs:
     name: product-vs
 
@@ -38,4 +38,4 @@ db:
     image:
       repository: bpcontaineracr.azurecr.io/product-db
       tag: "1.0"
-      pullPolicy: IfNotPresent
+      pullPolicy: Always

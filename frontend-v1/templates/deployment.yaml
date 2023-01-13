@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-{{ .Values.svc.version }}
+  namespace: {{ .Values.svc.namespace.name }}
+  labels:
+    app: frontend-svc
+    version: "{{ .Values.svc.version }}"
+spec:
+  replicas: {{ .Values.svc.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: frontend-svc
+      version: "{{ .Values.svc.version }}"
+  template:
+    metadata:
+      labels:
+        app: frontend-svc
+        version: "{{ .Values.svc.version }}"
+    spec:
+      serviceAccountName: {{ .Values.svc.serviceAccount.name }}
+      containers:
+      - name: frontend
+        image: "{{ .Values.svc.deployment.image.repository }}:{{ .Values.svc.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.svc.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.svc.deployment.containerPort }}
+
+

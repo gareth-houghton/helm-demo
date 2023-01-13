@@ -18,7 +18,7 @@ svc:
     image:
       repository: bpcontaineracr.azurecr.io/review-service
       tag: "1.0"
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
   vs:
     name: review-vs
 
@@ -38,4 +38,4 @@ db:
     image:
       repository: bpcontaineracr.azurecr.io/review-db
       tag: "1.0"
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
