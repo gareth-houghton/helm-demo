@@ -3,34 +3,34 @@ entries:
   frontend-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-13T12:23:56.269117Z"
+    created: "2023-01-13T14:23:36.731656Z"
     description: A Helm chart for Kubernetes
     digest: dc91410025ae1c91d065f2ec992107d26ec84b2f5daa098bdbe0a0e3092cbe12
     name: frontend-v1
     type: application
     urls:
-    - https://github.com/gareth-houghton/helm-demo/frontend-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/frontend-v1-0.1.0.tgz
     version: 0.1.0
   product-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-13T12:23:56.269526Z"
+    created: "2023-01-13T14:23:36.737074Z"
     description: A Helm chart for Kubernetes
     digest: 318100c0a4a3dee12faeef040e09cd6d3dd69ed108fc188c419446c08891a194
     name: product-service-v1
     type: application
     urls:
-    - https://github.com/gareth-houghton/helm-demo/product-service-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/product-service-v1-0.1.0.tgz
     version: 0.1.0
   review-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-13T12:23:56.269956Z"
+    created: "2023-01-13T14:23:36.737709Z"
     description: A Helm chart for Kubernetes
     digest: 2f7f55f4f4e0a480a53c618b4f46606a7e29130bab775314e849dd79d10873d1
     name: review-service-v1
     type: application
     urls:
-    - https://github.com/gareth-houghton/helm-demo/review-service-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/review-service-v1-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-13T12:23:56.268343Z"
+generated: "2023-01-13T14:23:36.724995Z"
