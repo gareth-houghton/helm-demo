@@ -14,3 +14,12 @@ spec:
     hosts:
     - "api.rte.cluster"
     - "rte.cluster"
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - "api.rte.cluster"
+    - "rte.cluster"
