@@ -23,3 +23,6 @@ spec:
     hosts:
     - "api.rte.cluster"
     - "rte.cluster"
+    tls:
+      mode: SIMPLE
+      credentialName: tls-gateway-cert

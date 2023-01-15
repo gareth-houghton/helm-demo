@@ -3,10 +3,10 @@ entries:
   base-infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:05:38.233878Z"
+    created: "2023-01-15T23:13:51.779962Z"
     description: Installs the base Istio infrastructure required for the container
       RTE lab
-    digest: 2e9bb76b43d7f12f772a0a63a52a483466132f0d3278a6722aebfa7c78affd07
+    digest: 11c31d8b4d8437540df8b1c84b1aa7f6e1d6f952489ec8a8fff94cb0ffa46794
     name: base-infra
     type: application
     urls:
@@ -15,9 +15,9 @@ entries:
   frontend-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:05:38.234225Z"
+    created: "2023-01-15T23:13:51.780273Z"
     description: Deploys the frontend container for the container RTE lab
-    digest: ee05bbf9534766a01650f6ffdae9e4155c6a527ba242ce7f6779a97202196b1a
+    digest: 9013b37dbc4b26b2fd9be5c2a350108ebbb5be079824beb93069c9d641c77e1c
     name: frontend-v1
     type: application
     urls:
@@ -26,10 +26,10 @@ entries:
   product-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:05:38.234653Z"
+    created: "2023-01-15T23:13:51.780635Z"
     description: Installs the product service backend service for the container RTE
       lab
-    digest: d5d7566587b432af5a6cbab2ea7f4f0a051904323b0ee8a4ed9e1ea5c58e8c56
+    digest: 320044f404bb5e299c511e66bd6703e2396950bdb9bf0e6db48c2c72f8d13233
     name: product-service-v1
     type: application
     urls:
@@ -38,13 +38,13 @@ entries:
   review-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:05:38.235003Z"
+    created: "2023-01-15T23:13:51.780992Z"
     description: Installs the review service backend service for the container RTE
       lab
-    digest: 453cf8e0ae79199b69d50c59f03bc33a80acbd365a1cfa68e1cf0f67dff69630
+    digest: 774b6ceb725e87ccb3cad94421397ee28b565acca35e56573538a546dffe7b51
     name: review-service-v1
     type: application
     urls:
     - https://gareth-houghton.github.io/helm-demo/review-service-v1-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-15T23:05:38.233124Z"
+generated: "2023-01-15T23:13:51.779171Z"
