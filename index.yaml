@@ -3,10 +3,10 @@ entries:
   base-infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:29:15.660254Z"
+    created: "2023-01-16T00:07:04.694668Z"
     description: Installs the base Istio infrastructure required for the container
       RTE lab
-    digest: c31508dfbbc34eaeba6af60cdf7231ebbde0681142a9b66a7637940762d3e830
+    digest: e9f11b0c72ce8030a053151b2613cd1ff3cbe03e3e5c6f8d7af4b9c82292dfa4
     name: base-infra
     type: application
     urls:
@@ -15,9 +15,9 @@ entries:
   frontend-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:29:15.66201Z"
+    created: "2023-01-16T00:07:04.694965Z"
     description: Deploys the frontend container for the container RTE lab
-    digest: 3eb3ebbf9d44d3d071b810efc65a75597f37dbbb35da1681e8b0e4050beeb0b7
+    digest: 22de34b6336f3567a7658318a7d141b3bfa811b6a9113fcc6f99b9907f3b3c02
     name: frontend-v1
     type: application
     urls:
@@ -26,10 +26,10 @@ entries:
   product-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:29:15.664229Z"
+    created: "2023-01-16T00:07:04.695271Z"
     description: Installs the product service backend service for the container RTE
       lab
-    digest: 4a7e6be0f17c3108121ddfc6c36b74dd4b0955f2228b758826f3160036bfeff6
+    digest: 599c242adf5058f2f5f8025d18f34bd28d9abe7cbe19cb52c50796e8f4764cc2
     name: product-service-v1
     type: application
     urls:
@@ -38,13 +38,13 @@ entries:
   review-service-v1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-15T23:29:15.664703Z"
+    created: "2023-01-16T00:07:04.695601Z"
     description: Installs the review service backend service for the container RTE
       lab
-    digest: e49ce54d86e35a87299a221438c6c3d54bd7ca58dba4b45684e9c920d1ae3a1f
+    digest: f7be0b9580faec98cc8c72f83c544c857adf0a4de66d4c7041423ee03fd92984
     name: review-service-v1
     type: application
     urls:
     - https://gareth-houghton.github.io/helm-demo/review-service-v1-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-15T23:29:15.659783Z"
+generated: "2023-01-16T00:07:04.693977Z"
