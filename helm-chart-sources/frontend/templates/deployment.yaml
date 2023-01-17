@@ -25,5 +25,32 @@ spec:
         imagePullPolicy: {{ .Values.svc.deployment.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.svc.deployment.containerPort }}
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-1.1
+  namespace: {{ .Values.svc.namespace.name }}
+  labels:
+    app: frontend-svc
+    version: "1.1"
+spec:
+  replicas: {{ .Values.svc.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: frontend-svc
+      version: "1.1"
+  template:
+    metadata:
+      labels:
+        app: frontend-svc
+        version: "1.1"
+    spec:
+      serviceAccountName: {{ .Values.svc.serviceAccount.name }}
+      containers:
+      - name: frontend
+        image: "{{ .Values.svc.deployment.image.repository }}:1.1"
+        imagePullPolicy: {{ .Values.svc.deployment.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.svc.deployment.containerPort }}
 

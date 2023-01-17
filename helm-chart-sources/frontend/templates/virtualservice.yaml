@@ -14,3 +14,11 @@ spec:
         host: {{ .Values.svc.service.name }}
         port:
           number: {{ .Values.svc.service.port }}
+        subset: version1
+      weight: 50
+    - destination: 
+        host: {{ .Values.svc.service.name }}
+        port: 
+          number: {{ .Values.svc.service.port }}
+        subset: version1-1
+      weight: 50

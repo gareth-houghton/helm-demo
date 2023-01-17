@@ -2,10 +2,15 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: frontend-ds
+  namespace: {{ .Values.svc.namespace.name }}
 spec:
-  host: rte.cluster
+  host: frontend-svc
   subsets:
   - name: version1
     labels:
-      app: frontend
+      app: frontend-svc
       version: "1.0"
+  - name: version1-1
+    labels:
+      app: frontend-svc
+      version: "1.1"
