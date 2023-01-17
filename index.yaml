@@ -3,48 +3,48 @@ entries:
   base-infra:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-16T00:07:04.694668Z"
+    created: "2023-01-17T10:12:22.559833Z"
     description: Installs the base Istio infrastructure required for the container
       RTE lab
-    digest: e9f11b0c72ce8030a053151b2613cd1ff3cbe03e3e5c6f8d7af4b9c82292dfa4
+    digest: 775844020c073b9420967cc625e1481beaeb6278ded9812695fecba1d8d67fc8
     name: base-infra
     type: application
     urls:
     - https://gareth-houghton.github.io/helm-demo/base-infra-0.1.0.tgz
     version: 0.1.0
-  frontend-v1:
+  frontend:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-16T00:07:04.694965Z"
+    created: "2023-01-17T10:12:22.560187Z"
     description: Deploys the frontend container for the container RTE lab
-    digest: 22de34b6336f3567a7658318a7d141b3bfa811b6a9113fcc6f99b9907f3b3c02
-    name: frontend-v1
+    digest: 1cdb5f19caae3ec8e14a6ed20928d7b09f15f0a942dcfdb9c10196af19c99ef1
+    name: frontend
     type: application
     urls:
-    - https://gareth-houghton.github.io/helm-demo/frontend-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/frontend-0.1.0.tgz
     version: 0.1.0
-  product-service-v1:
+  product-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-16T00:07:04.695271Z"
+    created: "2023-01-17T10:12:22.560661Z"
     description: Installs the product service backend service for the container RTE
       lab
-    digest: 599c242adf5058f2f5f8025d18f34bd28d9abe7cbe19cb52c50796e8f4764cc2
-    name: product-service-v1
+    digest: 54b218bcc3abd54e91812555ca92e082eeca7904600799e173695fc00329b588
+    name: product-service
     type: application
     urls:
-    - https://gareth-houghton.github.io/helm-demo/product-service-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/product-service-0.1.0.tgz
     version: 0.1.0
-  review-service-v1:
+  review-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-16T00:07:04.695601Z"
+    created: "2023-01-17T10:12:22.561019Z"
     description: Installs the review service backend service for the container RTE
       lab
-    digest: f7be0b9580faec98cc8c72f83c544c857adf0a4de66d4c7041423ee03fd92984
-    name: review-service-v1
+    digest: 182ea529b3f190d8d50a3483da139198cc156558f41620a3878da1671a455440
+    name: review-service
     type: application
     urls:
-    - https://gareth-houghton.github.io/helm-demo/review-service-v1-0.1.0.tgz
+    - https://gareth-houghton.github.io/helm-demo/review-service-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-16T00:07:04.693977Z"
+generated: "2023-01-17T10:12:22.559086Z"

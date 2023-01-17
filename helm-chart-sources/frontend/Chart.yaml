@@ -1,6 +1,6 @@
 apiVersion: v2
-name: review-service-v1
-description: Installs the review service backend service for the container RTE lab
+name: frontend
+description: Deploys the frontend container for the container RTE lab
 
 # A chart can be either an 'application' or a 'library' chart.
 #
